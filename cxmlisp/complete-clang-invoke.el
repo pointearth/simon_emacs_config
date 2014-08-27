@@ -1,0 +1,15 @@
+(add-to-list 'load-path "~/.emacs.d/lisp/complete-clang")
+(require 'auto-complete-clang-async)
+
+(defun ac-cc-mode-setup()
+  (setq ac-clang-complete-executable "~/.emacs.d/lisp/complete-clang")
+  (setq ac-sources '(ac-sources-clang-async))
+  (ac-clang-launch-complettion-process)
+)
+(defun my-ac-config()
+  (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+  (add-hook 'auto-complete-mode-hook 'ac-common-setup)
+  (global-auto-complete-mode t)
+)
+
+(my-ac-config)

@@ -1,0 +1,2 @@
+(load "~/.emacs.d/cxm/lisp/auto-complete-invoke.el")
+(load "~/.emacs.d/cxmlisp/complete-clang-invoke.el")
